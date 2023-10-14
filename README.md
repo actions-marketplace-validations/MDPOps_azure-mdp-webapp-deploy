@@ -1,2 +1,3 @@
-# azure-mdp-webapp-deploy
-MDP.WebApp Build and Deploy to Azure Container Apps
+# MDP.WebApp Deploy to Azure
+
+GitHub Action for Deploying MDP.WebApp to Azure
