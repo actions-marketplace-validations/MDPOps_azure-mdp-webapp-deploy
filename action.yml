@@ -6,6 +6,10 @@ author: Clark159
 description: GitHub Action for Deploying MDP.WebApp to Azure
 
 inputs:
+  azureCredentials:
+    description: Azure Credentials
+    required: true
+    
   resourceGroupName:
     description: Resource Group Name
     required: true
@@ -32,7 +36,12 @@ inputs:
     
 runs:
   using: composite
-  steps:  
+  steps:
+  
+  - name: Login Azure CLI
+    uses: azure/login@v1
+    with:
+      creds: ${{ inputs.azureCredentials }}
 
   - name: Azure Container Registry Build by MDP             
     uses: MDPOps/azure-container-registry-build@v1
